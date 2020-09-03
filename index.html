@@ -47,6 +47,12 @@
   </script>
 
   <style>
+
+    .center {
+      margin: auto;
+      width: 50%;
+    }
+
     #wrapper {
       padding-left: 300px;
       transition: all 0.4s ease 0s;
@@ -93,16 +99,28 @@
     }
 
     .project-card-container  {
-      max-width: 700px;
+      width: 100%;
+      display: flex;
     }
 
     .project-card {
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
-      max-width: 200px;
+      max-width: 700px;
+      margin-top: 30px;
       padding-bottom: 10px;
       margin-left: 40px;
       margin-right: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+      background: #16202b;
+      width: 80%;
+      height: width;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 400px;
     }
 
     .project-card:hover {
@@ -147,6 +165,33 @@
         width: 100%;
         height: auto;
         position: relative;
+      }
+
+      .project-card-container {
+        display: block;
+        width: 100%;
+      }
+
+      .project-card {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .project-card img {
+          height: 40%;
+          width: 100%;
+      }
+
+      .skill-card-container {
+        display: block;
+      }
+
+      .skill-card {
+        width: 100%;
+        margin-left: 0;
+        display: block;
+        padding-bottom: 10px;
+        margin-bottom: 50px;
       }
     }
 
@@ -193,26 +238,29 @@
 
           <div class="row">
             <div class="col-md-10 portfolio-section pb-4 ml-5">
-                <span class="d-flex justify-content-center"><h3>Projects</h3></span>
-                <span class="d-flex justify-content-center"><p>Some of my recent personal projects. Live demos can be found each project's corresponding github readme.</p></span>
-                <div class="d-flex container justify-content-center">
-                <div class="d-flex project-card-container justify-content-between">
-                  <div class="project-card">
-                    <img src="https://i.picsum.photos/id/860/200/200.jpg?hmac=xEnSgZhxWVFOWiVCBQzYpKUH7S5nFb7-QTZ8Hfqwq4M"></img>
-                    <div class="container">
-                      <h4>Social Media App</h4>
-                      <p>Allows users to create posts, comment on other users posts, etc.</p>
-                    </div>
-                  </div>
+              <span class="d-flex justify-content-center"><h3>Projects</h3></span>
+              <div class="project-card-container center">
 
+                <a target="_blank" href="https://react-todo-frontend.herokuapp.com">
                   <div class="project-card">
-                    <img src="https://i.picsum.photos/id/860/200/200.jpg?hmac=xEnSgZhxWVFOWiVCBQzYpKUH7S5nFb7-QTZ8Hfqwq4M"></img>
-                    <div class="container">
+                    <img src="./images/todo_ss.png"></img>
+                    <div class="container mb-3 pt-2">
                       <h4>Todo App</h4>
                       <p>Allows users to create todo items, mark todos as done, and delete</p>
                     </div>
                   </div>
+                </a>
+
+                <a target="_blank" href="https://socialmedia-frontend.herokuapp.com">
+                <div class="project-card">
+                  <img src="https://i.picsum.photos/id/860/200/200.jpg?hmac=xEnSgZhxWVFOWiVCBQzYpKUH7S5nFb7-QTZ8Hfqwq4M"></img>
+                  <div class="container mb-3 pt-2">
+                    <h4>Social Media App</h4>
+                    <p>Social media application that allows users to make posts to a global feed and comment on other users' posts</p>
+                  </div>
                 </div>
+              </a>
+
               </div>
             </div>
           </div>
