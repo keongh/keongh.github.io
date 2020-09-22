@@ -53,8 +53,12 @@
         var ww = document.body.clientWidth;
         if (ww < 1000) {
           $('#sidebar-wrapper').addClass('collapse');
+          $('.main-profile').removeClass('collapse')
+          $('.portfolio-section').removeClass('ml-5');
         } else {
           $('#sidebar-wrapper').removeClass('collapse');
+          $('.main-profile').addClass('collapse');
+          $('.portfolio-section').addClass('ml-5');
         };
       };
       $(window).resize(function() {
@@ -123,12 +127,12 @@
     .project-card-container  {
       width: 100%;
       display: flex;
+      justify-content: center;
     }
 
     .project-card {
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
       transition: 0.3s;
-      //max-width: 700px;
       margin-top: 30px;
       padding-bottom: 10px;
       margin-left: 40px;
@@ -137,7 +141,8 @@
       text-align: center;
       background: #16202b;
       width: 80%;
-      height: width;
+      max-width: 400px;
+      height: 80%;
     }
 
     .project-card img {
@@ -178,6 +183,10 @@
       max-width: 700px;
     }
 
+    #contact-form {
+      flex: 0 0 50%;
+    }
+
     @media screen and (max-width: 1000px) {
       #wrapper {
         padding-left: 0px;
@@ -185,7 +194,8 @@
 
       #mobile-nav {
         display: block;
-        background-color: #151e29;
+        //background-color: #151e29;
+        background-color: #827f7e;
         color: #ffffff;
       }
 
@@ -199,17 +209,20 @@
         //width: 100%;
         //height: auto;
         //position: relative;
+        overflow-y: scroll;
       }
 
       .project-card-container {
         display: block;
-        width: 100%;
+        //width: 100%;
       }
 
       .project-card {
         width: 100%;
         margin-left: 0;
         object-fit: contain;
+        flex: 1 1 0px;
+        max-width: none;
       }
 
       .project-card img {
@@ -227,6 +240,10 @@
         display: block;
         padding-bottom: 10px;
         margin-bottom: 50px;
+      }
+
+      #contact-form {
+        flex: 0 0 100%;
       }
     }
 
@@ -247,7 +264,7 @@
       </nav>
     </div>
 
-      <div id="sidebar-wrapper">
+      <div id="sidebar-wrapper" class="overflow-auto">
         <nav class="navbar">
           <ul class="sidebar-nav">
             <li class="sidebar-brand mb-3 mt-4"><h3>Keon Ghadamyari</h3></li>
@@ -270,9 +287,24 @@
     <div id="page-content-wrapper">
       <div class="page-content">
         <div class="container-fluid">
+
+
+
           <div class="row">
-            <div id="about" class="col-md-10 portfolio-section ml-5">
+            <div id="about" class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 portfolio-section ml-5 justify-content-center">
               <span class="d-flex justify-content-center"><h2>Keon Ghadamyari</h2></span>
+
+              <div class="main-profile">
+                <span class="d-flex justify-content-center mb-3"><img class="profile-image rounded-circle" src="images/linkedin.jpg" alt="image"></span>
+                <span class="my-2"><p>I am a passionate software engineer looking for a new role in backend development, full stack development, or machine learning. I love learning new things and working with a team to solve problems.</p></span>
+                <div class="d-flex justify-content-center pb-2">
+                  <ul style="list-style: none;">
+                    <span class="pr-2"><li style="display:inline;"><a href="http://linkedin.com/in/keon-gh/"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a></li></span>
+                    <li style="display:inline;"><a href="https://github.com/keongh"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                  </ul>
+                </div>
+              </div>
+
               <span class="d-flex justify-content-center"><h3>About Me</h3></span>
               <span class="d-flex justify-content-center"><p>I have been working in software development since graduating with my Master's in Electrical and Computer Engineering from Georgia Tech in May 2018. My first position was with Liberty Defense Technologies, an Atlanta-based startup using 3D radar imaging technology developed by researchers at MIT Lincoln Labs to design a physical security system capable of real-time automatic weapon detection.
               I primarily worked on the AI subsystem, building our automated detection system from the ground up with the help of two other engineers. I am currently looking for new opportunities in backend or fullstack development as well as data science/machine learning.
@@ -281,7 +313,7 @@
           </div>
 
           <div class="row">
-            <div id="projects" class="col-md-10 portfolio-section pb-4 ml-5">
+            <div id="projects" class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 portfolio-section pb-4 ml-5">
               <span class="d-flex justify-content-center"><h3>Projects</h3></span>
               <div class="project-card-container center">
 
@@ -310,7 +342,7 @@
           </div>
 
           <div class="row">
-            <div id="skills" class="col-md-10 portfolio-section ml-5">
+            <div id="skills" class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 portfolio-section ml-5">
               <span class="d-flex justify-content-center"><h3>Skills</h3></span>
               <!-- <div class="d-flex justify-content-between"> -->
               <div class="skill-card-container">
@@ -365,10 +397,10 @@
             </div>
           </div>
           <div class="row">
-            <div id="contact" class="col-md-10 portfolio-section ml-5">
+            <div id="contact" class="col-xs-12 col-sm-12 col-md-12 col-lg-11 col-xl-11 portfolio-section ml-5">
               <span class="d-flex justify-content-center"><h3>Contact Form</h3></span>
               <div class="d-flex justify-content-center">
-                <form style="flex:0 0 50%;" method="post" name="contact-form">
+                <form method="post" name="contact-form" id="contact-form">
                   <div class="form-group">
                     <label for="Name">Name</label>
                     <input type="text" class="form-control" placeholder="Enter name" name="name">
